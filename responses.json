@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1712252559908,
+    "timestamp": "2024-04-04T17:42:39.908Z",
+    "answers": {
+      "seconds": "10",
+      "track": "2",
+      "importance": "1",
+      "roleModel": "Test"
+    }
+  },
+  {
+    "id": 1712252588262,
+    "timestamp": "2024-04-04T17:43:08.262Z",
+    "answers": {
+      "seconds": "35",
+      "track": "3",
+      "importance": "3",
+      "roleModel": "Krysa77"
+    }
+  }
+]

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webová anketa</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="index">
+    <%- include('blocks/header'); -%>
+    <h2>Anketa Závodnických Výkonů v Go-Kartingu</h2>
+<form action="/submit" method="post" class="form-container">
+    <div>
+        <label for="seconds">Vaše nejrychlejší kolo v sekundách:</label>
+        <input type="number" step="0.01" id="seconds" name="seconds" required>
+    </div>
+    
+    <div>
+        <label>Vyberte trať:</label>
+        <select id="track" name="track">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select>
+    </div>
+    
+    <div>
+        <label for="importance">Usilí při jízdě? (škála 0 až 5): </label>
+        <input type="range" id="importance" name="importance" min="0" max="5" step="1">
+        <span id="importanceValue"></span>
+    </div>
+    
+    <div>
+        <label for="roleModel">Jméno závodníka:</label>
+        <input type="text" id="roleModel" name="roleModel">
+    </div>
+    
+    <button type="submit">Odeslat odpovědi</button>
+</form>
+
+<script>
+    const slider = document.getElementById('importance');
+    const output = document.getElementById('importanceValue');
+    output.innerHTML = slider.value; // Zobrazit výchozí hodnotu
+    
+    slider.oninput = function() {
+        output.innerHTML = this.value;
+    }
+    </script>
+    <%- include('blocks/footer'); -%>
+</body>
+</html>
